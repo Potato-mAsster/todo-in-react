@@ -1,9 +1,9 @@
-import AddList from "../add-task/add-task";
+import React from "react";
 
-const TaskList = ({ data, onDelete }) => {
+const TaskList = ({ data, onDelete, onAdd }) => {
   const elements = data.map((item) => {
     const { id, ...itemProps } = item;
-    return <AddList key={id} {...itemProps} onDelete={() => onDelete(id)} />;
+    return <li key={id}>{item.taskName}</li>;
   });
   return <ul>{elements}</ul>;
 };
